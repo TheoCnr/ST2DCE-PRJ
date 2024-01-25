@@ -1,14 +1,15 @@
 # Use an official Golang runtime as a parent image
 FROM golang:latest
 
-# Set the working directory to /webapi
-WORKDIR /webapi
+RUN mkdir /app
 
-# Copy the source code into the container at /webapi
-COPY . .
+ADD . /app
+
+# Set the working directory to /webapi
+WORKDIR /app
 
 # Build the Go application
-RUN go build -o app
+RUN go build -o main .
 
 # Expose port 8080 to the outside world
 EXPOSE 8080

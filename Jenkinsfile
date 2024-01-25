@@ -14,8 +14,10 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    // Build the Go application inside a Docker container
-                    sh 'docker run --rm -v $(pwd):/app -w /app golang:latest go build -o app'
+                    dir('webapi') {
+                        // Build the Go application
+                        sh 'docker run --rm -v $PWD:/webapi -w /webapi golang:latest go build -o app'
+                    }
                 }
             }
         }
