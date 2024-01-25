@@ -14,8 +14,8 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    // Build the Go application
-                    sh 'go build -o app'
+                    // Build the Go application inside a Docker container
+                    sh 'docker run --rm -v $(pwd):/app -w /app golang:latest go build -o app'
                 }
             }
         }
