@@ -4,8 +4,8 @@ FROM golang:latest
 # Set the working directory to /webapi
 WORKDIR /webapi
 
-# Copy the current directory contents into the container at /webapi
-COPY . /webapi
+# Copy the source code into the container at /webapi
+COPY . .
 
 # Build the Go application
 RUN go build -o app
