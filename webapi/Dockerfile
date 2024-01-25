@@ -15,4 +15,4 @@ RUN go build -o main .
 EXPOSE 8082
 
 # Command to run the executable
-CMD ["./app"]
+CMD go run main.go
