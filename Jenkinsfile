@@ -29,7 +29,7 @@ pipeline {
                     sh 'docker build -t devops_app .'
 
                     // Run Docker container
-                    sh 'docker run -p 8080:8080 devops_app'
+                    sh 'docker run -p 8081:8081 devops_app'
                 }
             }
         }
