@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     // Checkout the source code from Git
-                    git 'git branch: \'main\', url: \'https://github.com/TheoCnr/ST2DCE-PRJ.git\''
+                    git branch: 'main', url: 'https://github.com/TheoCnr/ST2DCE-PRJ.git'
                 }
             }
         }
